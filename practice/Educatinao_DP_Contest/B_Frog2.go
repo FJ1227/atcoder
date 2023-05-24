@@ -6,9 +6,8 @@ import (
 )
 
 func main() {
-	var n int
-	fmt.Scan(&n)
-
+	var n, k int
+	fmt.Scan(&n, &k)
 	var h = make([]int, n)
 
 	for i := 0; i < n; i++ {
@@ -18,7 +17,6 @@ func main() {
 	var MAX = math.MaxInt64
 
 	var dp = make([]int, n)
-
 	for i := 0; i < n; i++ {
 		dp[i] = MAX
 	}
@@ -26,11 +24,10 @@ func main() {
 	dp[0] = 0
 
 	for i := 0; i < n; i++ {
-		if i > 0 {
-			chmin(&dp[i], dp[i-1]+abs(h[i]-h[i-1]))
-		}
-		if i > 1 {
-			chmin(&dp[i], dp[i-2]+abs(h[i]-h[i-2]))
+		for j := 1; j <= k; j++ {
+			if i+j < n {
+				chmin(&dp[i+j], dp[i]+abs(h[i]-h[i+j]))
+			}
 		}
 	}
 
