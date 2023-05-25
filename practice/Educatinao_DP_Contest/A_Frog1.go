@@ -1,4 +1,4 @@
-package educatinaodpcontest
+package main
 
 import (
 	"fmt"
