@@ -18,7 +18,7 @@ func main() {
 	vs := make([]int, N)
 
 	for i := 0; i < N; i++ {
-		fmt.Scan(&ws[i], &vs[i])
+		fmt.Fscan(r, &ws[i], &vs[i])
 	}
 
 	const INF = 1 << 60
