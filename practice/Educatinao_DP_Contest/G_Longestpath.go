@@ -32,7 +32,6 @@ func main() {
 		ans = max(ans, v)
 	}
 
-	fmt.Fprint(w, memo)
 	fmt.Fprint(w, ans)
 }
 
